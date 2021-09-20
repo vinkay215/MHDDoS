@@ -1195,37 +1195,10 @@ def downloadsocks(choice):
     if choice == "1":
         f = open(out_file, 'wb')
         try:
-            r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=http&country=all",
-                             timeout=5)
+            r = requests.get("https://www.misakamaster.tk/http.txt?getproxy=MisakaMaster", timeout=5)
             f.write(r.content)
-        except:
-            pass
-        try:
-            r = requests.get("https://www.proxy-list.download/api/v1/get?type=http", timeout=5)
-            f.write(r.content)
-            f.close()
-        except:
-            pass
-        try:
-            r = requests.get("https://www.proxyscan.io/download?type=http", timeout=5)
-            f.write(r.content)
-            f.close()
-        except:
-            pass
-        try:
-            r = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt", timeout=5)
-            f.write(r.content)
-        except:
-            pass
-        try:
-            r = requests.get(
-                "https://proxy-daily.com/api/getproxylist?apikey=3Rr6lb-yfeQeotZ2-9M76QI&format=ipport&type=http&lastchecked=60",
-                timeout=5)
-            f.write(r.content)
-            f.close()
         except:
             f.close()
-
 
 def main():
     global proxies, multiple, choice, timer, out_file
